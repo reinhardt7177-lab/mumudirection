@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>무무가리킴 — 가리키는 말의 탑</title>
+  <meta name="description" content="이것·그것·저것을 거리 관계로 익히는 초등 국어 게임" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
+  />
+  <link rel="stylesheet" href="styles.css?v=22" />
+</head>
+<body>
+  <!-- 랜딩 -->
+  <section id="landing" class="screen is-active" aria-label="시작 화면">
+    <div class="landing-inner">
+      <div class="landing-art no-art" id="landingArt">
+        <span class="landing-fallback" aria-hidden="true">🧑‍🚀</span>
+        <div class="landing-scrim" aria-hidden="true"></div>
+        <div class="landing-text">
+          <h1 class="title">무무가리킴</h1>
+          <p class="subtitle">가리키는 말의 탑</p>
+          <p class="lead" id="startLine">같이 ‘가리키는 말의 탑’을 쌓아볼까?</p>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-lg" id="startBtn">🚀 탑 쌓으러 가기</button>
+      <button class="btn btn-ghost" id="resetBtn" hidden>처음부터 다시</button>
+    </div>
+  </section>
+
+  <!-- 탑 화면 -->
+  <section id="tower" class="screen" aria-label="탑 화면">
+    <header class="topbar">
+      <button class="btn btn-ghost btn-icon" id="towerBack" aria-label="시작 화면으로">← 처음</button>
+      <h2 class="topbar-title">가리키는 말의 탑</h2>
+      <button class="btn btn-ghost btn-icon" id="muteBtn" aria-pressed="false" aria-label="효과음 켜기/끄기">🔊 소리 켜짐</button>
+    </header>
+    <div class="star-board" id="starBoard" aria-label="모은 별"><!-- tower.js가 채움 --></div>
+    <div class="tower-banner" id="towerBanner" aria-hidden="true"><!-- sprites.js: 성장 탑 이미지 --></div>
+    <div class="tower-wrap" id="towerWrap"><!-- tower.js가 채움 --></div>
+    <p class="tower-help" id="towerHelp">칸을 눌러 도전해 보자!</p>
+  </section>
+
+  <!-- 게임 화면 -->
+  <section id="game" class="screen" aria-label="게임 화면">
+    <header class="topbar">
+      <button class="btn btn-ghost btn-icon" id="gameBack" aria-label="탑으로 돌아가기">← 탑</button>
+      <h2 class="topbar-title" id="gameTitle">게임</h2>
+      <span class="game-progress" id="gameProgress" aria-live="polite"></span>
+    </header>
+    <div class="game-body" id="gameBody"><!-- game.js가 채움 --></div>
+    <div class="feedback" id="feedback" role="status" aria-live="assertive" hidden></div>
+  </section>
+
+  <!-- 축하 화면 -->
+  <section id="celebrate" class="screen" aria-label="완성 축하">
+    <div class="celebrate-inner">
+      <div class="mumu-hero pop" id="celebrateHero" aria-hidden="true">🧑‍🚀🏆</div>
+      <h2 class="title" id="celebrateTitle">마스터피스 완성!</h2>
+      <p class="lead" id="celebrateLine"></p>
+
+      <div class="certificate" id="certificate">
+        <p class="cert-head">🏆 가리키는 말 마스터 인증서 🏆</p>
+        <div class="cert-badges" id="certBadges"><!-- tower.js가 채움 --></div>
+        <p class="cert-date" id="certDate"></p>
+      </div>
+
+      <div class="tower-wrap tower-trophy" id="trophyTower"></div>
+      <p class="share-tip">📸 완성한 탑을 캡처해서 친구랑 같이 봐도 좋아!</p>
+      <button class="btn btn-primary btn-lg" id="celebrateHome">탑으로 돌아가기</button>
+    </div>
+  </section>
+
+  <script src="data.js?v=22"></script>
+  <script src="sprites.js?v=22"></script>
+  <script src="tower.js?v=22"></script>
+  <script src="game.js?v=22"></script>
+</body>
+</html>

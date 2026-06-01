@@ -1,0 +1,11 @@
+# 원본/중복 이미지 — 앱은 .png 만 사용 (jpg는 변환 전 원본이라 제외)
+*.jpg
+*.jpeg
+
+# OS / 에디터
+Thumbs.db
+.DS_Store
+
+# 임시 스크립트
+_*.ps1
+.claude/settings.local.json
